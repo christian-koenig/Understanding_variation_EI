@@ -82,64 +82,6 @@ corr_acad_density <- data %>%
   select(AGS,municipality,corr_acad_density) %>%
   ungroup()
 
-# corr_change_acad_density <- data %>%
-#   mutate(share_academic=academic*100/(sscemployed_total+unemployed_total)) %>% ## calculate grid-level share of academics (workingage)
-#   ungroup() %>%
-#   group_by(id,AGS,municipality) %>%
-#   arrange(year) %>%
-#   mutate(share_academic_lag=lag(share_academic),
-#          change_academic=share_academic-share_academic_lag) %>%
-#   summarise(mean_change_academic=mean(change_academic,na.rm=TRUE),
-#             mean_grid_pop=mean(grid_pop,na.rm=TRUE)) %>%
-#   filter(!is.na(mean_change_academic)) %>%
-#   ungroup() %>%
-#   group_by(AGS,municipality) %>%
-#   summarise(corr_change_acad_density=cor(mean_change_academic,mean_grid_pop)) %>%
-#   select(AGS,municipality,corr_change_acad_density) %>%
-#   ungroup()
-# 
-# 
-# acad <- data %>%
-#   filter(year==2017) %>%
-#   ungroup() %>%
-#   group_by(AGS,municipality) %>%
-#   summarise(sscemployed_total=sum(sscemployed_total),
-#             unemployed_total=sum(unemployed_total),
-#             academic=sum(academic),
-#             city_pop=sum(grid_pop)) %>%
-#   mutate(share_academic=academic*100/(sscemployed_total+unemployed_total)) %>%
-#   select(AGS,municipality,share_academic) %>%
-#   ungroup()
-# 
-# change_acad <- data %>%
-#   ungroup() %>%
-#   group_by(year,AGS,municipality) %>%
-#   summarise(sscemployed_total=sum(sscemployed_total),
-#             unemployed_total=sum(unemployed_total),
-#             academic=sum(academic),
-#             city_pop=sum(grid_pop)) %>%
-#   mutate(share_academic=academic*100/(sscemployed_total+unemployed_total)) %>%
-#   ungroup() %>%
-#   group_by(AGS,municipality) %>%
-#   arrange(year) %>%
-#   mutate(share_academic_lag=lag(share_academic),
-#          change_academic=share_academic-share_academic_lag) %>%
-#   summarise(mean_change_academic=mean(change_academic,na.rm=TRUE),
-#             mean_grid_pop=mean(city_pop,na.rm=TRUE)) %>%
-#   filter(!is.na(mean_change_academic)) %>%
-#   select(AGS,municipality,mean_change_academic) %>%
-#   ungroup()
-  
-
-
-# gentrification_cities <- acad %>%
-#   inner_join(change_acad %>% st_drop_geometry(),by=c("AGS","municipality")) %>%
-#   inner_join(corr_acad_density %>% st_drop_geometry(),by=c("AGS","municipality")) %>%
-#   inner_join(corr_change_acad_density %>% st_drop_geometry(),by=c("AGS","municipality"))
-# 
-# class(gentrification_cities)
-
-
 saveRDS(corr_acad_density,file = paste0(workdata,"gentrification_indices_cities.rds"))
 
 
