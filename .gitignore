@@ -4,10 +4,12 @@ documentation/*
 figures/*
 !figures/.gitkeep
 tables/*
-!table/.gitkeep
+!tables/.gitkeep
 data_raw/*
 !data_raw/.gitkeep
 workdata/*
 !workdata/.gitkeep
-code/*
-!code/.gitkeep
+#code/*
+#!code/.gitkeep
+code/interactive_map.R
+.gitignore
