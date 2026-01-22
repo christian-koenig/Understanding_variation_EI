@@ -12,4 +12,4 @@ workdata/*
 #code/*
 #!code/.gitkeep
 code/interactive_map.R
-.gitignore
+*.gitignore
