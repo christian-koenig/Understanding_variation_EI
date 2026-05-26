@@ -1,4 +1,5 @@
-# B – Spatial data preparation
+# README
+## R-scripts for spatial data preparation and analysis
 
 Our spatial unit of analysis is the 1km-by-1km grid. Since the spatial data on the different dimensions of environmental quality are not readily available at that scale, we generally assign environmental conditions to grid cells via a spatial overlap approach: 1) intersecting grid cells with the spatial units at which the environmental data is obtained, 2) grouping the resulting fragments per grid cell, and 3) processing that information into grid-level measures of environmental quality.
 
