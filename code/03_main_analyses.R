@@ -355,6 +355,9 @@ ggsave(graph, filename =paste0(figs,"slx_results_pooled_all.pdf"),
 ggsave(graph, filename =paste0(figs,"slx_results_pooled_all.svg"),
        height = 6, width = 9 )
 
+ggsave(graph, filename =paste0(figs,"slx_results_pooled_all.eps"),
+       height = 6, width = 9 )
+
 ggsave(graph, filename =paste0(figs,"slx_results_pooled_all.png"),
        height = 6, width = 9)
 
@@ -1004,6 +1007,10 @@ ggsave(filename = paste0(figs,"fig3_meb_slx.svg"),
        height = 16,
        width = 13)
 
+ggsave(filename = paste0(figs,"fig3_meb_slx.eps"),
+       height = 16,
+       width = 13)
+
 
 #################################
 ##### CITY CONTEXT ANALYSES #####
@@ -1220,6 +1227,11 @@ ggpubr::ggarrange(contexts_graph1,contexts_graph2,
                                                     width = 14,
                                                     height = 7)
 
+ggpubr::ggarrange(contexts_graph1,contexts_graph2,
+                  nrow = 2, align = "v") %>% ggsave(filename=paste0(figs,"city-level_predictors_uncertainty-weighted_EI_SLX_a.eps"),
+                                                    width = 14,
+                                                    height = 7)
+
 
 
 
@@ -1293,6 +1305,11 @@ ggpubr::ggarrange(contexts_graph1,contexts_graph2,
 
 ggpubr::ggarrange(contexts_graph1,contexts_graph2,
                   nrow = 2, align = "v") %>% ggsave(filename=paste0(figs,"city-level_predictors_uncertainty-weighted_EI_SLX_b.png"),
+                                                    width = 14,
+                                                    height = 7)
+
+ggpubr::ggarrange(contexts_graph1,contexts_graph2,
+                  nrow = 2, align = "v") %>% ggsave(filename=paste0(figs,"city-level_predictors_uncertainty-weighted_EI_SLX_b.eps"),
                                                     width = 14,
                                                     height = 7)
 
